@@ -1,6 +1,6 @@
 {
   "name": "packi-settings",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "本地配置读写工具.",
   "main": "lib/index.js",
   "jsnext:main": "src/index.ts",

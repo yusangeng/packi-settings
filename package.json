@@ -1,0 +1,64 @@
+{
+  "name": "packi-settings",
+  "version": "0.1.0",
+  "description": "本地配置读写工具.",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.ts",
+  "types": "lib/",
+  "type-check": "tsc",
+  "scripts": {
+    "lint": "eslint --fix ./src && prettier --write ./src",
+    "test": "nyc mocha --require ts-node/register test/*.spec.ts",
+    "coverage": "nyc report --reporter=lcov",
+    "es5": "rm -rf ./lib && tsc -p tsconfig.json",
+    "prepublishOnly": "npm run lint && npm run test && npm run es5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yusangeng/packi-settings.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "yusangeng",
+    "email": "yusangeng@outlook.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/file-exists": "^4.0.0",
+    "@types/lodash.merge": "^4.6.6",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.12",
+    "@types/user-home": "^2.0.0",
+    "chai": "^4.2.0",
+    "coveralls": "^3.1.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "packi-lint-config": "^0.1.11",
+    "source-map-support": "^0.5.19",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "file-exists": "^5.0.1",
+    "lodash.merge": "^4.6.2",
+    "tslib": "^2.0.3",
+    "user-home": "^2.0.0"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
+  }
+}
